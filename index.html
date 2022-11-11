@@ -11,6 +11,7 @@
     <img class="click" src="img/yellow blob.gif" height="256px" width="256px" onclick="addToScore(1)">
 
     <script>
+        
         let time = Math.floor(Math.random() * 10)
         setTimeout(() => {
             return alert(`Are you here? It has been ${Math.floor((time * 100000) / 60000)} minutes.`)
@@ -22,6 +23,12 @@
             score += amount
             document.getElementById("score").innerHTML = score;
         }
+
+        document.addEventListener("keypress", function(event) {
+            if (event.keyCode == 13) {
+                addToScore(amount)
+            }
+        });
     </script>
     <style>
         img.click {
